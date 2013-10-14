@@ -26,6 +26,7 @@
 #include <tianchi/core/tcsingleton.hpp>
 #include <tianchi/core/tctuple.hpp>
 #include <tianchi/core/tcmath.h>
+#include <tianchi/core/tcrecentuse.hpp>
 
 #include <tianchi/file/tcdir.h>
 #include <tianchi/file/tcfile.h>
@@ -45,6 +46,7 @@
 #include <tianchi/gui/tclineedit.h>
 #include <tianchi/gui/tcmarqueelabel.h>
 #include <tianchi/gui/tcsortpaginationtableview.h>
+#include <tianchi/gui/tcscreencutdialog.h>
 
 #include <tianchi/network/tcdownloadhttp.h>
 #include <tianchi/network/tcsingleinstance.h>

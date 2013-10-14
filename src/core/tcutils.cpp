@@ -1,9 +1,27 @@
+// **************************************************************************
+// Tianchi C++ library for Qt (open source)
+// 天池共享源码库
+// 版权所有 (C) 天池共享源码库开发组
+// 授权协议：请阅读天池共享源码库附带的授权协议
+// **************************************************************************
+// 文档说明：常用功能函数
+// ==========================================================================
+// 开发日志：
+// 日期         人员        说明
+// --------------------------------------------------------------------------
+// 2013.04.10   圣域天子    建立
+// 2013.09.25   XChinux     增加getLocationFromIP()函数
+//
+// ==========================================================================
+// @file tcutils.cpp 常用功能函数
+// ==========================================================================
 #include <tianchi/core/tcutils.h>
 
 #include <QTextCodec>
 #include <QDateTime>
 #include <QFileInfo>
 #include <QDir>
+#include <QtCore/qmath.h>
 
 #include <QSettings>
 
@@ -14,6 +32,11 @@
 #include <QMessageBox>
 
 #include <iostream>
+
+// for libqqwry begin by XChinux, 20130926
+#include "../3rdparty/libqqwry/qqwry.h"
+// for libqqwry end by XChinux, 20130926
+
 using namespace std;
 
 QHash<QString, QString> TcUtils::StringToMap(const QString& mapStrings)
@@ -227,4 +250,54 @@ QHash<QString, QByteArray> TcUtils::byFields(const QByteArray& fieldBytes)
         pos2 = fieldBytes.indexOf('\0', pos1);
     }
     return ret;
+}
+
+QString TcUtils::getLocationFromIP(const QString &ip_addr, 
+            const QString &qqwry_dat_file)
+{
+    QString strReturn;
+
+    if (QRegExp("^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$").indexIn(ip_addr) != -1)
+    {
+        QStringList iparray = ip_addr.split(".");
+
+        if (iparray[0] == "10" || iparray[0] == "127" 
+                || (iparray[0] == "192" && iparray[1] == "168") 
+                || (iparray[0] == "172" 
+                    && (iparray[1].toInt() >= 16 && iparray[1].toInt() <= 31)))
+        {
+            strReturn = "- LAN";
+        }
+        else if (iparray[0].toInt() > 255 || iparray[1].toInt() > 255 
+                || iparray[2].toInt() > 255 || iparray[3].toInt() > 255)
+        {
+            strReturn = "- Invalid IP Address";
+        }
+        else
+        {
+            if (QFile::exists(qqwry_dat_file))
+            {
+                char addr1[64];
+                char addr2[128];
+
+                memset(addr1, 0, 64);
+                memset(addr2, 0, 128);
+
+                FILE *qqwry_file = fopen(qqwry_dat_file.toStdString().c_str(),
+                        "rb");
+                if (qqwry_file != NULL)
+                {
+                    if (::qqwry_get_location(addr1, addr2, 
+                                ip_addr.toStdString().c_str(), qqwry_file))
+                    {
+                        strReturn = QString("- %1%2")
+                            .arg(QString::fromLocal8Bit(addr1))
+                            .arg(QString::fromLocal8Bit(addr2));
+                    }
+                    fclose(qqwry_file);
+                }
+            }
+        }
+    }
+    return strReturn;
 }

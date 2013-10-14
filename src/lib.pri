@@ -40,7 +40,7 @@ CONFIG(static, static|shared) | CONFIG(staticlib, staticlib|shared) {
     win32 {
         RC_FILE = $$PWD/tianchi.rc
     } else {
-        VERSION = 0.0.1
+        VERSION = 0.0.2
     }
 }
 
@@ -67,6 +67,7 @@ macx-g++*  : PRECOMPILED_HEADER = $$PWD/../src/tianchi_gcc_pch.h
 win32:LIBS += -lversion
 win32-msvc*:LIBS += -ladvapi32 -lole32
 
+
 HEADERS += \
     $$TC_INCL/tianchi.h \
     $$TC_INCL/tianchi/tcglobal.h \
@@ -79,6 +80,7 @@ HEADERS += \
     $$TC_INCL/tianchi/core/tcfunctionalsortfilterproxymodel.h \
     $$TC_INCL/tianchi/core/tcsingleton.hpp \
     $$TC_INCL/tianchi/core/tctuple.hpp \
+    $$TC_INCL/tianchi/core/tcrecentuse.hpp \
     $$TC_INCL/tianchi/core/tcmath.h \
     $$TC_INCL/tianchi/file/tcjson.h \
     $$TC_INCL/tianchi/file/tclog.h \
@@ -97,6 +99,7 @@ HEADERS += \
     $$TC_INCL/tianchi/gui/tcguiutils.h \
     $$TC_INCL/tianchi/gui/tcheadersetupdialog.h \
     $$TC_INCL/tianchi/gui/tcsortpaginationtableview.h \
+    $$TC_INCL/tianchi/gui/tcscreencutdialog.h \
     $$TC_INCL/tianchi/network/tcdownloadhttp.h \
     $$TC_INCL/tianchi/network/tcsingleinstance.h \
     $$TC_INCL/tianchi/network/tcudp.h \
@@ -132,6 +135,7 @@ SOURCES += \
     $$PWD/gui/tcguiutils.cpp \
     $$PWD/gui/tcformutils.cpp \
     $$PWD/gui/tcsortpaginationtableview.cpp \
+    $$PWD/gui/tcscreencutdialog.cpp \
     $$PWD/network/tcdownloadhttp.cpp \
     $$PWD/network/tcsingleinstance.cpp \
     $$PWD/network/tcudp.cpp \
@@ -147,4 +151,4 @@ FORMS += \
 RESOURCES += \
     $$PWD/../res/tianchi.qrc
 
-include($$PWD/bcmath/bcmath.pri)
+include($$PWD/3rdparty/3rdparty.pri)
