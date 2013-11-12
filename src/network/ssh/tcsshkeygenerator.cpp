@@ -28,7 +28,7 @@
 **
 **************************************************************************/
 
-#include "tcsshkeygenerator.h"
+#include "tianchi/network/ssh/tcsshkeygenerator.h"
 
 #include "include_p/tcsshbotanconversions_p.h"
 #include "include_p/tcsshcapabilities_p.h"

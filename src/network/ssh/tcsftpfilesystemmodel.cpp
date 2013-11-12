@@ -27,11 +27,11 @@
 **
 **
 **************************************************************************/
-#include "sftpfilesystemmodel.h"
+#include "tcsftpfilesystemmodel.h"
 
-#include "sftpchannel.h"
-#include "tcsshconnection.h"
-#include "tcsshconnectionmanager.h"
+#include "tianchi/network/ssh/tcsftpchannel.h"
+#include "tianchi/network/ssh/tcsshconnection.h"
+#include "tianchi/network/ssh/tcsshconnectionmanager.h"
 
 #include <QFileInfo>
 #include <QHash>

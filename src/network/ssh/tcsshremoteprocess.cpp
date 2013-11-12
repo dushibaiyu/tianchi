@@ -28,7 +28,7 @@
 **
 **************************************************************************/
 
-#include "tcsshremoteprocess.h"
+#include "tianchi/network/ssh/tcsshremoteprocess.h"
 #include "include_p/tcsshremoteprocess_p.h"
 
 #include "include_p/tcsshincomingpacket_p.h"

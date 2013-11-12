@@ -31,7 +31,7 @@
 #ifndef SFTPINCOMINGPACKET_P_H
 #define SFTPINCOMINGPACKET_P_H
 
-#include "sftppacket_p.h"
+#include "tcsftppacket_p.h"
 
 namespace TCssh {
 namespace Internal {

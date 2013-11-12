@@ -32,9 +32,9 @@
 #define SFTCHANNEL_P_H
 
 #include "tianchi/network/ssh/sftpdefs.h"
-#include "sftpincomingpacket_p.h"
-#include "sftpoperation_p.h"
-#include "sftpoutgoingpacket_p.h"
+#include "tcsftpincomingpacket_p.h"
+#include "tcsftpoperation_p.h"
+#include "tcsftpoutgoingpacket_p.h"
 #include "tcsshchannel_p.h"
 
 #include <QByteArray>

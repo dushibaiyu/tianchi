@@ -31,7 +31,7 @@
 #ifndef SFTPOUTGOINGPACKET_P_H
 #define SFTPOUTGOINGPACKET_P_H
 
-#include "sftppacket_p.h"
+#include "tcsftppacket_p.h"
 #include "tianchi/network/ssh/sftpdefs.h"
 
 namespace TCssh {

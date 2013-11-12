@@ -30,7 +30,7 @@
 #ifndef SFTPFILESYSTEMMODEL_H
 #define SFTPFILESYSTEMMODEL_H
 
-#include "sftpdefs.h"
+#include "tcsftpdefs.h"
 
 #include <tianchi/tcglobal.h>
 

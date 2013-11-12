@@ -28,9 +28,9 @@
 **
 **************************************************************************/
 
-#include "tcsshconnectionmanager.h"
+#include "tianchi/network/ssh/tcsshconnectionmanager.h"
 
-#include "tcsshconnection.h"
+#include "tianchi/network/ssh/tcsshconnection.h"
 
 #include <QCoreApplication>
 #include <QList>

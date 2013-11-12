@@ -28,10 +28,10 @@
 **
 **************************************************************************/
 
-#include "tcsshremoteprocessrunner.h"
+#include "tianchi/network/ssh/tcsshremoteprocessrunner.h"
 
-#include "tcsshconnectionmanager.h"
-#include "tcsshpseudoterminal.h"
+#include "tianchi/network/ssh/tcsshconnectionmanager.h"
+#include "tianchi/network/ssh/tcsshpseudoterminal.h"
 
 
 /*!

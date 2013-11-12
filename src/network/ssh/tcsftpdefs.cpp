@@ -28,6 +28,6 @@
 **
 **************************************************************************/
 
-#include "tcsftpdefs.h"
+#include "tianchi/network/ssh/tcsftpdefs.h"
 
 namespace TCssh { const SftpJobId SftpInvalidJob = 0; }

@@ -28,10 +28,10 @@
 **
 **************************************************************************/
 
-#include "tcsshconnection.h"
+#include "tianchi/network/ssh/tcsshconnection.h"
 #include "include_p/tcsshconnection_p.h"
 
-#include "sftpchannel.h"
+#include "tianchi/network/ssh/tcsftpchannel.h"
 #include "include_p/tcsshcapabilities_p.h"
 #include "include_p/tcsshchannelmanager_p.h"
 #include "include_p/tcsshcryptofacility_p.h"

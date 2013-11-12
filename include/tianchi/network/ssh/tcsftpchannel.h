@@ -31,7 +31,7 @@
 #ifndef SFTCHANNEL_H
 #define SFTCHANNEL_H
 
-#include "sftpdefs.h"
+#include "tcsftpdefs.h"
 //#include "private/sftpincomingpacket_p.h"
 
 #include <tianchi/tcglobal.h>
